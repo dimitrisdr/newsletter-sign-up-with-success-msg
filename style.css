@@ -118,8 +118,13 @@ body {
 }
 
 #email:not(:focus):invalid, .error #email {
-    background-color:hsla(4, 100%, 67%, 0.1);
+    background-color:hsla(4, 51%, 66%, 0.2);
     border: 1px solid var(--clr-primary-Tomato);
+    color: var(--clr-primary-Tomato);
+}
+
+.error #email::placeholder {
+    color: var(--clr-primary-Tomato);
 }
 
 .error .error-msg {
