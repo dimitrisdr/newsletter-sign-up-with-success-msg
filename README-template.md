@@ -70,5 +70,4 @@ myForm.addEventListener('submit', (e)=> {
 - Frontend Mentor - [@dimitrisdr](https://www.frontendmentor.io/profile/dimitrisdr)
 
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
