@@ -203,8 +203,40 @@ body {
     font-weight: 700;
 }
 
+.form-success {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+}
+
 .hidden {
     display: none;
+}
+
+@media screen and (max-width:375px) {
+
+    .wraper{
+        width: 100vw;
+        min-height: 100vh;
+    }
+
+    .attribution {
+        display: none;
+    }
+
+    body {
+        margin-block: 0;
+        background-color: var(--clr-neutral-White);
+    }
+
+    .form-success {
+        min-height: 100vh;
+    }
+
+    .form-success .submit-btn {
+        align-self: flex-end;
+    }
+    
 }
 
 @media screen and (min-width:630px) {
