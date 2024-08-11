@@ -1,0 +1,224 @@
+*,*::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+:root {
+    --clr-primary-Tomato: hsl(4, 100%, 67%);
+    --clr-primary-Tomato-light: hsl(4, 100%, 57%);
+    --clr-neutral-Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --clr-neutral-Charcoal-Grey: hsl(235, 18%, 26%);
+    --clr-neutral-Grey: hsl(231, 7%, 60%);
+    --clr-neutral-White: hsl(0, 0%, 100%);
+}
+
+img, svg {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2 {
+    line-height: 1.1;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+    min-height: 100vh;
+    background-color: var(--clr-neutral-Charcoal-Grey);
+    line-height: 1.5;
+    color: var(--clr-neutral-Charcoal-Grey);
+    margin-block: 2rem;
+}
+
+.wraper {
+    display: grid;
+    background-color: var(--clr-neutral-White);
+    margin-inline: 0.5rem;
+    border-radius: 12px;
+    /* display: none; */
+}
+
+
+.img {
+    background-size: cover;
+    margin-inline: auto;
+    margin-block: auto;
+}
+
+.form-main {
+    display: grid;
+    gap: 1rem;
+    padding:2rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form-description {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.description-item {
+    display: grid;
+    grid-template-columns: 2.5rem auto;
+}
+
+.description-item::before {
+    content: url('assets/images/icon-list.svg')
+}
+
+.form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form input {
+    padding: 0.8rem 1rem;
+}
+
+.form-item {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.labels-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.email-label {
+    font-weight: 700;
+}
+
+#email {
+    border-radius: 4px;
+    border: 1px solid var(--clr-neutral-Grey);
+}
+
+#email:focus {
+    outline: 2px solid var(--clr-neutral-Dark-Slate-Grey);
+}
+
+.error-msg {
+    color: var(--clr-primary-Tomato);
+    display: none;
+}
+
+#email:not(:focus):invalid, .error #email {
+    background-color:hsla(4, 100%, 67%, 0.1);
+    border: 1px solid var(--clr-primary-Tomato);
+}
+
+.error .error-msg {
+    display: block;
+}
+
+.form-item:has(:not(:focus):invalid) .error-msg {
+    display: inline-flex;
+}
+
+
+
+.submit-btn {
+    border: none;
+    color: var(--clr-neutral-White);
+    background-color: var(--clr-neutral-Charcoal-Grey);
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.attribution {
+    font-size: 11px; 
+    text-align: center; 
+    color: var(--clr-neutral-White);
+}
+
+.attribution a { 
+   color: var(--clr-primary-Tomato); 
+}
+
+.form-success {
+    background-color: var(--clr-neutral-White);
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.success-msg {
+    display: grid;
+    gap: 2rem;
+}
+
+.submit-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+    var(--clr-primary-Tomato), 
+    var(--clr-primary-Tomato-light)
+    );
+    z-index: -1;
+    opacity: 0;
+    transition: 0.2s ease-in;
+}
+
+.submit-btn:hover::after, .submit-btn:focus-visible {
+    opacity: 1;
+} 
+
+.submit-btn:hover, .submit-btn:focus-visible {
+    box-shadow: 0 10px 10px hsla(4, 100%, 67%, 0.4);
+} 
+
+.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.success-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (min-width:630px) {
+    
+    .wraper {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 'form img';
+        max-width: 700px;
+        align-items: center;
+    }
+
+    .img-container {
+        padding: 1rem;
+        display: grid;
+        place-items: center;
+        grid-area: img;
+    }
+
+    .form-main {
+        grid-area: form;
+    }
+}
